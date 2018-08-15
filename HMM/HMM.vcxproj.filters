@@ -42,7 +42,4 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="资源文件.txt" />
-  </ItemGroup>
 </Project>
