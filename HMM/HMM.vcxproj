@@ -115,6 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="appraise.h" />
+    <ClInclude Include="first_transfer.h" />
+    <ClInclude Include="Launch_prob.h" />
+    <ClInclude Include="organize_txt.h" />
+    <ClInclude Include="viterbi.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="first_transfer.cpp" />
+    <ClCompile Include="Launch_prob.cpp" />
+    <ClCompile Include="源.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
