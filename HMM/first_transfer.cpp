@@ -22,8 +22,8 @@ void first_transfer::first()
 			first_all++;
 		}
 	}
-	//测试代码。输出所有的第一个词性和其频数，
 	/*
+	//测试代码。输出所有的第一个词性和其频数，
 	for (auto a = first_word.begin(); a != first_word.end(); a++)
 	{
 	cout << a->first << "\t" << a->second << endl;
@@ -116,27 +116,32 @@ void first_transfer::count_transfer()
 			transfer[z->first] = other;
 		}
 	}
+	/*
 	//测试代码，  输如一个s2词性，输出它的后一个词性及其概率以及它的后一个词性的总概率为1
-	double all2 = 0.0;
-	auto c = transfer.begin();
-	auto w = transfer.begin();
-	string s2 = "SP";
-	while (c != transfer.end())
+	for (auto z = all_word.begin(); z != all_word.end(); z++)
 	{
-		auto a = c->second.begin();
-		while (a != c->second.end())
+		string s2 = z->first;
+		double all2 = 0.0;
+		auto c = transfer.begin();
+		auto w = transfer.begin();
+		while (c != transfer.end())
 		{
-			if (a->first == s2)
+			auto a = c->second.begin();
+			while (a != c->second.end())
 			{
-				cout << s2 << "->" << c->first << ":\t" << a->second << endl;
-				all2 += a->second;
+				if (a->first == s2)
+				{
+					cout << s2 << "->" << c->first << ":\t" << a->second << endl;
+					all2 += a->second;
+				}
+				//cout << c->first << "->" << a->first << endl;
+				a++;
 			}
-			//cout << c->first << "->" << a->first << endl;
-			a++;
+			c++;
 		}
-		c++;
+		cout << all2 << endl;
 	}
-	cout << all2 << endl;
+	*/
 }
 	//第一次写的方法计算转移概率。
 	/*

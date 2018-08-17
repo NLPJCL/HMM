@@ -48,7 +48,7 @@ void Launch_prob::count_launch_prob()
 			{
 				if (other.find(z->first) == other.end())
 				{
-					other[z->first] = 1/ double(z->second + all);
+					other[z->first] = 0.3/ double(z->second + 0.3*all);
 				}
 			}
 			launch_prob[former] = other;
@@ -56,7 +56,7 @@ void Launch_prob::count_launch_prob()
 		}
 		if (z.find(word) != z.end())
 		{
-			other[word_class] = (w0->second)/( double(all_wordclass[word_class])+all);
+			other[word_class] = (w0->second+0.3)/double(all_wordclass[word_class]+0.3*all);
 		}
 		former = word;
 	}
@@ -65,7 +65,30 @@ void Launch_prob::count_launch_prob()
 	other.clear();
 	for (auto z = all_wordclass.begin(); z != all_wordclass.end(); z++)
 	{
-		other[z->first] = 1/ double(z->second + all);
+		other[z->first] = 0.3/ double(z->second + 0.3*all);
 	}
 	launch_prob["**"] = other;
+	//²âÊÔ×ªÒÆ¸ÅÂÊ/
+	/*
+	double all2 = 0.0;
+	auto c = launch_prob.begin();
+	auto c1 = launch_prob.find("Ëµ");
+	auto s = c1->second.begin();
+	string s2 = s->first;
+	while (c != launch_prob.end())
+	{
+		auto a = c->second.begin();
+		while (a != c->second.end())
+		{
+			if (a->first == s2)
+			{
+				cout << s2 << "->" << c->first << ":\t" << a->second << endl;
+				all2 += a->second;
+			}
+			a++;
+		}
+		c++;
+	}
+	cout << all2 << endl;
+	*/
 }

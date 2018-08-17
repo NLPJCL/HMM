@@ -24,10 +24,13 @@
     <ClInclude Include="Launch_prob.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="organize_txt.h">
+    <ClInclude Include="viterbi.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="viterbi.h">
+    <ClInclude Include="dataset.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sentence.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -39,6 +42,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dataset.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

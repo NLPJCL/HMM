@@ -116,12 +116,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="appraise.h" />
+    <ClInclude Include="dataset.h" />
     <ClInclude Include="first_transfer.h" />
     <ClInclude Include="Launch_prob.h" />
-    <ClInclude Include="organize_txt.h" />
+    <ClInclude Include="sentence.h" />
     <ClInclude Include="viterbi.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dataset.cpp" />
     <ClCompile Include="first_transfer.cpp" />
     <ClCompile Include="Launch_prob.cpp" />
     <ClCompile Include="源.cpp" />
