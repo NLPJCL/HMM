@@ -44,6 +44,7 @@ void Launch_prob::count_launch_prob()
 		if (z.find(word) == z.end())//Ã»´æ´¢¹ý
 		{
 			z[word]++;
+			/*
 			for (auto z = all_wordclass.begin(); z != all_wordclass.end(); z++)
 			{
 				if (other.find(z->first) == other.end())
@@ -51,6 +52,7 @@ void Launch_prob::count_launch_prob()
 					other[z->first] = 0.3/ double(z->second + 0.3*all);
 				}
 			}
+			*/
 			launch_prob[former] = other;
 			other.clear();
 		}

@@ -1,7 +1,7 @@
 #include"viterbi.h"//viterbiËã·¨¡£
 int main()
 {
-	viterbi("dev");
+	viterbi("train");
 	system("pause");
 	return 0;
 }

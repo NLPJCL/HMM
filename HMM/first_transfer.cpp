@@ -88,14 +88,26 @@ void first_transfer::count_transfer()
 			if (first_word.find(former) != first_word.end())//把第一个词性添加上，
 			{
 				auto w = first_word.find(former);
-				other["start"] = w->second / first_all;
+				other["start"] = (w->second+0.3) /( first_all+first_word.size()*0.3);
+			}	
+			else
+			{
+				other["start"] = 0.3 / (first_all + first_word.size()*0.3);
+
+			}
+			for (auto z = all_word.begin(); z != all_word.end(); z++)
+			{
+				if (other.find(z->first) == other.end())
+				{
+					other[z->first] = 0.3 / double(z->second + 0.3*all_word.size());
+				}
 			}
 			transfer[former] = other;
 			other.clear();
 		}
 		if (z.find(word_class) != z.end())
 		{
-			other[former_class] = t1->second / all_word[former_class];
+			other[former_class] = (t1->second+0.3 )/ (all_word[former_class]+all_word.size()*0.3);
 		}
 		former = word_class;
 	}
@@ -103,16 +115,30 @@ void first_transfer::count_transfer()
 	if (first_word.find(former) != first_word.end())
 	{
 		auto w = first_word.find(former);
-		other["start"] = w->second / first_all;
+		other["start"] = (w->second + 0.3) / (first_all + first_word.size()*0.3);
+	}
+	for (auto z = all_word.begin(); z != all_word.end(); z++)
+	{
+		if (other.find(z->first) == other.end())
+		{
+			other[z->first] = 0.3 / double(z->second + 0.3*all_word.size());
+		}
 	}
 	transfer[former] = other;
-	//把第一个词性加进去。
+	//把只在第一个词性中，而不在除了第一个词性的其他词性的词加入。
 	for (auto z = first_word.begin(); z != first_word.end(); z++)
 	{
 		if (transfer.find(z->first) == transfer.end())
 		{
 			map<string, double> other;
-			other["start"] = z->second / first_all;
+			other["start"] = (z->second+0.3) /( first_all+0.3*31);
+			for (auto z = all_word.begin(); z != all_word.end(); z++)
+			{
+				if (other.find(z->first) == other.end())
+				{
+					other[z->first] = 0.3 / double(z->second + 0.3*all_word.size());
+				}
+			}
 			transfer[z->first] = other;
 		}
 	}
