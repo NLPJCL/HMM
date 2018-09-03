@@ -23,5 +23,5 @@ void appraise(vector<vector<string>> tag_class ,dataset sens)
 		i++;
 	}
 
-	cout << "标注词性的准确率为" <<c<<"/"<<all<<"="<< c / double(all);
+	cout << "标注词性的准确率为" << c << "/" << all << "=" << c / double(all) << endl;
 }
