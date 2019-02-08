@@ -104,10 +104,9 @@ public:
 		}
 		all_word = word_tag_count.size();
 		count_prob(word_tag_count, current_former_count, all_tag, first_tag, all_word, alpha, all_first_tag);
-		
 	}
-	void count_prob(map_map_int word_tag_count,map_map_int current_former_count, map_int all_tag, map_int first_tag,int all_word,double alpha,int all_first_tag)
-	{//计算概率
+	void count_prob(map_map_int &word_tag_count,map_map_int &current_former_count, map_int &all_tag, map_int &first_tag,int all_word,double alpha,int all_first_tag)
+	{
 		std::unordered_map<std::wstring, double> other;
 		double prob = 0.0;
 		//发射概率

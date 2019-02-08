@@ -116,31 +116,13 @@ int main()
 	std::vector<std::wstring> words;
 	DWORD t1, t2;
 	t1 = timeGetTime();
-	double alpha = 0.0090;
+	double alpha = 0.3;
 	HMMPosTag hmm;
 	hmm.fit("train.conll.txt",alpha);
-	//hmm.appraise("test.conll.txt"); //对测试集的评价。
-	hmm.pos_tag(words);
+	hmm.appraise("dev.conll.txt"); //对测试集的评价。
+//	hmm.pos_tag(words);//词性标注接口
 	t2 = timeGetTime();
 	cout << "Use Time:" << (t2 - t1)*1.0 / 1000 << endl;
-
-
-
-
-
-
-
-//	test_wstring::test();
-//	test_wstring::convert();
-	
-
-	/*
-	DWORD t1, t2;
-	t1 = timeGetTime();
-	viterbi("train");
-	t2 = timeGetTime();
-	cout << "Use Time:" << (t2 - t1)*1.0 / 1000 << endl;
-	*/
 	system("pause");
 	
 	return 0;
