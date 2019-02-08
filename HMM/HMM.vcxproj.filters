@@ -15,36 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="appraise.h">
+    <ClInclude Include="sentence.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="first_transfer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Launch_prob.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="viterbi.h">
+    <ClInclude Include="HMMPosTag.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="dataset.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="sentence.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="first_transfer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Launch_prob.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="源.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dataset.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
